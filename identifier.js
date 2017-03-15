@@ -2,11 +2,11 @@
 
 
 //globals
-var incrementingId = this.getIcrementingId();
+var autoIncrementId = this.generateId();
 
 
 function Identifier(){
-    var id = this.generateID();
+    var id = this.generateId();
 
     this.getId = function(){
         return id;
@@ -14,16 +14,11 @@ function Identifier(){
 }
 
 
-Identifier.prototype.generateID = function(){
-    return incrementingId++;
-}
-
-
-Identifier.prototype.getIcrementingId = function(){
-    if (!incrementingId) {
-        return 0;
+Identifier.prototype.generateId = function(){
+    if (!autoIncrementId) {
+        return Memory.autoIncrementId++;
     }
-    return incrementingId;
+    return autoIncrementId++;
 }
 
 

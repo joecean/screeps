@@ -6,7 +6,7 @@ const identifier = require('./identifier');
 
 
 function Message(message_type) {
-    var id = identifier.getIcrementingId();
+    var id = new identifier().getId();
     var messageType = messageType;
 
     this.getId = function(){
