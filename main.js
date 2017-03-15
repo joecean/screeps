@@ -9,8 +9,8 @@ const publisher = require('./publisher');
 
 //globals
 var masterBroker = new broker(Memory.masterBroker);
-var masterConsumer = new publisher(masterConsumer);
-var masterPublisher = new publisher(masterBroker);
+var masterConsumer = new consumer(masterBroker);
+var masterPublisher = new producer(masterBroker);
 
 
 module.exports.loop = function () {

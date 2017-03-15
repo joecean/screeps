@@ -10,7 +10,7 @@ function Consumer(broker) {
 }
 
 
-Consumer.prototype.handleTask = function(){
+Consumer.prototype.handleTask = function(message){
     console.log(message);
 }
 

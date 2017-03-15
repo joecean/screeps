@@ -4,20 +4,17 @@
 //imports
 const identifier = require('./identifier');
 
-//globals
-// TODO: import message types
-
 
 function Message(message_type) {
-    var id = new identifier();
-    var message_type = message_type;
+    var id = identifier.getIcrementingId();
+    var messageType = messageType;
 
-    this.id = function(){
-        return id;  // add get?
+    this.getId = function(){
+        return id;
     }
 
-    this.message_type = function(){
-        return message_type;
+    this.getMessageType = function(){
+        return messageType;
     }
 }
 

@@ -4,7 +4,7 @@
 function Broker(queue=[]) {
     var queue = queue;
 
-    this.queue = function(){
+    this.getQueue = function(){
         return queue.slice();
     }
 
@@ -19,7 +19,7 @@ function Broker(queue=[]) {
 
 
 Broker.prototype.isEmpty = function(){
-  return (this.queue.length == 0);
+    return (this.getQueue().length == 0);
 }
 
 

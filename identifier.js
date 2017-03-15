@@ -2,16 +2,29 @@
 
 
 //globals
-var incrementingId = 0;
+var incrementingId = this.getIcrementingId();
 
 
-function Identifier() {
+function Identifier(){
+    var id = this.generateID();
+
+    this.getId = function(){
+        return id;
+    }
 }
 
 
-Identifier.prototype.generateID = function() {
+Identifier.prototype.generateID = function(){
     return incrementingId++;
 }
 
 
-module.exports = Message;
+Identifier.prototype.getIcrementingId = function(){
+    if (!incrementingId) {
+        return 0;
+    }
+    return incrementingId;
+}
+
+
+module.exports = Identifier;
