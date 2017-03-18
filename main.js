@@ -4,15 +4,16 @@
 //imports
 const broker = require('./broker');
 const consumer = require('./consumer');
-const publisher = require('./publisher');
+const producer = require('./producer');
 
 
 //globals
 var masterBroker = new broker(Memory.masterBroker);
 var masterConsumer = new consumer(masterBroker);
-var masterPublisher = new producer(masterBroker);
+var masterProducer = new producer(masterBroker);
 
 
 module.exports.loop = function () {
-    console.log(masterBroker.getQueue());
+    //masterProducer.produceFetchMineralMessage();
+    //console.log(masterBroker.getQueue()[0].prototype);
 }

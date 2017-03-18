@@ -15,11 +15,21 @@ function Broker(queue=[]) {
     this.remove = function(){
         return queue.shift()
     }
+
+    this.clear = function() {
+        for (message in queue) {
+            this.remove();
+        }
+    }
 }
 
 
 Broker.prototype.isEmpty = function(){
     return (this.getQueue().length == 0);
+}
+
+Broker.prototype.clearQueue = function(){
+    this.clear();
 }
 
 

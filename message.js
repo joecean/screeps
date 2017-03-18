@@ -2,19 +2,31 @@
 
 
 //imports
+
+
+
+//globals
+
+
 const identifier = require('./identifier');
 
 
 function Message(message_type) {
-    var id = new identifier().getId();
-    var messageType = messageType;
+    var content = {
+        id: new identifier().getId(),
+        messageType: messageType
+    };
 
     this.getId = function(){
-        return id;
+        return content.id;
     }
 
     this.getMessageType = function(){
-        return messageType;
+        return content.messageType;
+    }
+
+    this.getContent = function(){
+        return content;
     }
 }
 
